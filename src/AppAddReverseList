@@ -1,0 +1,62 @@
+package com.mapsahr;
+
+import java.sql.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        ////
+        System.out.println("Enter the number of 1th Array's elements: ");
+        int[] array1 = new int[input.nextInt()];
+        for (int i = 0; i < array1.length; i++) {
+            System.out.println("Enter the elements of the array1 " +(i + 1) );
+            array1[i] = input.nextInt();
+        }
+        System.out.println(Arrays.toString(array1));
+
+        ///
+        String sum1 = "";
+        for (int i = array1.length - 1; i >= 0; i--) {
+            sum1 += array1[i];
+        }
+        Integer factor1 = Integer.valueOf(sum1);
+        System.out.println(factor1);
+
+        ////
+        System.out.println("Enter the number of 2th Array's elements: ");
+        int[] array2 = new int[input.nextInt()];
+        for (int i = 0; i < array2.length; i++) {
+            System.out.println("Enter the elements of the array2 " + (i + 1));
+            array2[i] = input.nextInt();
+        }
+        System.out.println(Arrays.toString(array2));
+        ////
+
+        String sum2 = "";
+        for (int i = array2.length - 1; i >= 0; i--) {
+            sum2 += array2[i];
+        }
+        Integer factor2 = Integer.valueOf(sum2);
+        System.out.println(factor2);
+
+        ////Sumation
+        Integer resultInt = factor1 + factor2;
+        String resultSTR = String.valueOf(resultInt);
+        System.out.println(resultSTR);
+        Character[] str = new Character[resultSTR.length()];
+        //ArrayList<String> str1= new ArrayList<>();
+
+
+        ////reverse
+        for (int i = resultSTR.length() - 1; i >= 0; i--) {
+            str[(resultSTR.length() - 1) - i] = resultSTR.charAt(i);
+            //str1.set(i,resultSTR.charAt())
+        }
+        System.out.println(Arrays.toString(str));
+
+    }
+}
